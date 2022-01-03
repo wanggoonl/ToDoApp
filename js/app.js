@@ -19,10 +19,20 @@ function submitForm(event) {
 }
 
 const savedUsername = localStorage.getItem(USERNAME_KEY);
+const removeBtn = document.querySelector(".del");
 
 if (savedUsername === null) {
   loginForm.classList.remove(HIDDEN_CLASSNAME);
   loginForm.addEventListener("submit", submitForm);
 } else {
   paintText(savedUsername);
+  // removeBtn.classList.toggle(HIDDEN_CLASSNAME);
 }
+
+// function removeName() {
+//   localStorage.removeItem(USERNAME_KEY);
+//   window.location.reload();
+// }
+
+// removeBtn.addEventListener("click", removeName);
+// event.preventDefault 때문에 홈페이지를 새로고침 해야하는 단점
